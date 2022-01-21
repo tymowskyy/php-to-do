@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2vh;
+    margin: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+#main-header {
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 0 1vh 0 1vh;
+    margin: 1vh 0 1vh 0;
+}
+
+#logo img {
+    height: 100%;
+}
+
+#title {
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+#title h1 {
+    margin: 0;
+    font-size: 4vh;
+    letter-spacing: .4vh;
+}
+
+#title h2 {
+    margin: 0;
+    font-size: 1.6vh;
+    border-top: .5vh solid black;
+}
+
+#log-out {
+    margin: 2vh 0 2vh 0;
+}
+
+#log-out-button {
+    padding: 0 2vw 0 2vw;
+    background-color: black;
+    color: white;
+    border-radius: .6vh;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    box-sizing: border-box;
+}
+
+#menu {
+    width: 100vw;
+}
+
+.mask {
+    position: absolute;
+    overflow: hidden;
+    transform: translatey(-.5vh);
+    width: 100%;
+}
+
+#active-list {
+    background-color: chocolate;
+    text-align: center;
+    padding: 1vh;
+    box-sizing: border-box;
+}
+
+h3 {
+    font-size: 4vh;
+    margin: 0;
+    padding: 0;
+}
+
+#hiding-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: transform 1s ease-in-out;
+    background-color: chocolate;
+    padding: .5vh 20vw 2vh 20vw;
+    box-sizing: border-box;
+}
+
+.closed-menu {
+    transform: translateY(-100%);
+}
+
+.menu-option {
+    padding: 1vh 0 1vh 0;
+    display: flex;
+    flex-direction: row;
+    font-size: 3vh;
+}
+
+.list {
+   width: 50%;
+}
+
+.item-count {
+    text-align: right;
+    width: 50%;
+}
+
+#add-list {
+    align-self: flex-start;
+}
+
+input[type=text] {
+    height: 4vh;
+    font-size: 3vh;
+    width: 80%;
+    margin: 1vh 0 1vh 0;
+    padding: 0;
+}
+input[type=submit] {
+    margin: 0;
+    padding: 0;
+    font-size: 3.4vh;
+    height: 4vh;
+    width: 4vh;
+    outline: none;
+    border: none;
+    border-radius: 20%;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (min-width : 992px) {
+
+    .closed-menu {
+        transform: none;
+    }
+
+    #menu {
+        width: 30vw;
+    }
+
+    .mask {
+        position: relative;
+    }
+
+    #hiding-menu {
+        padding: 1vw 1vh 1vw 1vh;
+    }
+
+    #container {
+        flex-direction: row;
+    }
+
+}
