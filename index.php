@@ -59,12 +59,14 @@
             </div>
         </div>
         <main id="main">
-            <form action="addItem.php" method="POST">
-                <div id="add-item">
-                    <input type="submit" value="+" class="no-bg">
-                    <input type="text" placeholder="Add task" class="no-bg">
-                </div>
-            </form>
+            <div id="add-item-outer">
+                <form action="addItem.php" method="POST">
+                    <div id="add-item">
+                        <input type="submit" value="+" class="no-bg">
+                        <input type="text" placeholder="Add task" class="no-bg">
+                    </div>
+                </form>
+            </div>
             <ul id="items">
                 <li>item1</li>
                 <li>item2</li>

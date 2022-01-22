@@ -169,12 +169,10 @@ h3 {
 .no-bg {
     background-color: transparent;
     border: none;
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
     background: transparent;
-    box-sizing: border-box;
     fill: none;
+    display: block;
+    box-sizing: content-box;
 }
 
 input[type=submit].no-bg {
@@ -215,8 +213,10 @@ input[type=submit].no-bg:hover {
 
 
 #main {
-    background-color: #f6f4e8;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f6f4e8;
 }
 
 #items {
@@ -228,6 +228,7 @@ input[type=submit].no-bg:hover {
     align-items: center;
     width: 100%;
     box-sizing: border-box;
+    display: block;
 }
 
 #items li {
@@ -242,12 +243,19 @@ input[type=submit].no-bg:hover {
 
 @media only screen and (min-width : 992px) {
 
-    main {
+    #main {
         box-sizing: border-box;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        border-radius: 5vh;
     }
 
     #main-header {
         margin: 3vh 4vw 3vh 4vw;
+    }
+
+    .closed-menu {
+        pointer-events: all;
     }
 
     .closed-menu #hiding-menu {
@@ -258,8 +266,7 @@ input[type=submit].no-bg:hover {
         width: 20vw;
         border-right: 1px solid #1d3124;
     }
-
-    
+ 
     #mask {
         position: relative;
     }
@@ -292,6 +299,12 @@ input[type=submit].no-bg:hover {
         font-size: 2.4vh;
         width: 70%;
     }
+
+    input[type=text].no-bg {
+        margin-left: 2vw;
+        width: 20vw;
+    }
+
     input[type=text].no-bg:focus {
         padding-top: 1px;
     }
@@ -300,16 +313,27 @@ input[type=submit].no-bg:hover {
         margin-right: 1vw;
     }
 
+    #add-item-outer {
+        width: 30vw;
+        padding-right: 5vw;
+        padding-top: 2vh;
+    }
+
+    #add-item {
+        width: 100%;
+        margin: 0;
+    }
+
     #container {
         justify-content: center;
         flex-direction: row;
-        border-top: 1px solid #1d3124;
         box-sizing: border-box;
         width: 100%;
     }
 
     #items {
         font-size: 4vh;
+        width: 100%;
     } 
 
     #title {
@@ -339,7 +363,7 @@ input[type=submit].no-bg:hover {
     }
     #author {
         display: block;
-        font-size: 3vmin;
+        font-size: 2vmin;
     }
 
 }
