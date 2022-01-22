@@ -1,4 +1,4 @@
 function menu() {
-    var el = document.getElementById('hiding-menu');
+    var el = document.getElementById('mask');
     el.classList.toggle('closed-menu');
 }
