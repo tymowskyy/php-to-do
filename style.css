@@ -142,56 +142,22 @@ h3 {
 #add-item {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 60vw;
     justify-content: center;
+    margin: 2vh;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-input {
-    box-shadow: 1px 1px 8px 2px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 1px 1px 8px 2px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 1px 8px 2px rgba(0,0,0,0.75);
-    margin: 1vh 2vw;
-    padding: 0;
-    height: 5vh;
-    display: block;
-    box-sizing: border-box;
-    border: 2px solid black;
-    border-radius: 1vh;
-}
-
-input[type=text] {
-    width: 30vw;
-    background-color: white;
-    font-size: 2.4vh;
-    padding-left: 1vw;
-}
-
-input[type=submit] {
-    width: 20vw;
-    font-size: 2vh;
-    background-color: white;
-}
 
 #menu input[type=text] {
     height: 4vh;
     font-size: 2.5vh;
     width: 80%;
     margin: 1vh 0 1vh 0;
-    padding: 0;
     padding-left: 1vw;
-    color: #1d3124;
 }
 
-#menu input[type=submit] {
-    margin: 0;
-    padding: 0;
-    font-size: 3.4vh;
-    height: 4vh;
-    width: 4vh;
-    outline: none;
-    border-radius: 20%;
-    color: #1d3124;
-}
 
 #container {
     display: flex;
@@ -199,10 +165,58 @@ input[type=submit] {
     width: 100vw;
 }
 
+
+.no-bg {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    background: transparent;
+    box-sizing: border-box;
+    fill: none;
+}
+
+input[type=submit].no-bg {
+    text-align: center;
+    font-size: 3.6vh;
+    width: 4vh;
+    height: 4vh;
+    border-radius: 50%;
+    padding: 0;
+    color: gray;
+}
+
+input[type=text].no-bg {
+    height: 4vh;
+    font-size: 2.6vh;
+    width: 30vw;
+    padding-left: 2vw;
+    padding: 0;
+}
+
+input[type=text].no-bg:focus {
+    outline: none;
+    border: none;
+    border-bottom: black 1px solid;
+    padding-top: 1px;
+    outline: black;
+    color: black;
+}
+
+input[type=text].no-bg:focus::placeholder {
+    content: "";
+}
+
+input[type=submit].no-bg:hover {
+    outline: solid black 1px;
+    color: black;
+}
+
+
 #main {
-    width: 100%;
     background-color: #f6f4e8;
-    
+    width: 100%;
 }
 
 #items {
@@ -227,6 +241,10 @@ input[type=submit] {
 }
 
 @media only screen and (min-width : 992px) {
+
+    main {
+        box-sizing: border-box;
+    }
 
     #main-header {
         margin: 3vh 4vw 3vh 4vw;
@@ -269,10 +287,13 @@ input[type=submit] {
     }
     
     #menu input[type=text] {
-        padding: .5vw;
-        font-size: 2.4vh;
         margin-left: 1vw;
+        padding-left: .2vw;
+        font-size: 2.4vh;
         width: 70%;
+    }
+    input[type=text].no-bg:focus {
+        padding-top: 1px;
     }
 
     #menu input[type=submit] {
@@ -283,6 +304,8 @@ input[type=submit] {
         justify-content: center;
         flex-direction: row;
         border-top: 1px solid #1d3124;
+        box-sizing: border-box;
+        width: 100%;
     }
 
     #items {

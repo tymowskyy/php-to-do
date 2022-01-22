@@ -41,7 +41,7 @@
             <header id="active-list">
                 <h3 onclick="menu()">list1<h3>
             </header>
-            <div id="mask">
+            <div id="mask" class="closed-menu">
                 <nav>
                     <div id="hiding-menu">
                         <a href="#" class="menu-option"><span class="list">list1</span><span class="item-count">3 items</span></a>
@@ -50,8 +50,8 @@
                         <a href="#" class="menu-option"><span class="list">list4</span><span class="item-count">2 items</span></a>
                         <form action="addList.php" method="POST">
                         <div id="add-list">
-                                <input type="text" placeholder="New list name">
-                                <input type="submit" value="+">
+                                <input type="text" placeholder="New list name" class="no-bg">
+                                <input type="submit" value="+" class="no-bg">
                             </div>
                         </form>
                     </div>
@@ -61,8 +61,8 @@
         <main id="main">
             <form action="addItem.php" method="POST">
                 <div id="add-item">
-                    <input type="text" placeholder="New item">
-                    <input type="submit" value="Add item">
+                    <input type="submit" value="+" class="no-bg">
+                    <input type="text" placeholder="Add task" class="no-bg">
                 </div>
             </form>
             <ul id="items">
