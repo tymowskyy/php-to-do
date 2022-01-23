@@ -4,7 +4,6 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 2vh;
     margin: 0;
-    background-image: url("background.png");
     color: #1d3124;
 }
 
@@ -25,7 +24,8 @@ a {
 }
 
 #logo img {
-    height: 100%;
+    height: 8vh;
+    width: 8vh;
 }
 
 #title {
@@ -54,7 +54,6 @@ a {
 }
 
 #log-out-button {
-    padding: 0 2vw 0 2vw;
     background-color: #1d3124;
     color: #f6f4e8;
     border-radius: .6vh;
@@ -131,12 +130,14 @@ h3 {
 }
 
 #add-list {
+    box-sizing: border-box;
     align-self: flex-start;
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    padding: 1vh .5vh;
 }
 
 #add-item {
@@ -147,15 +148,6 @@ h3 {
     margin: 2vh;
     margin-left: auto;
     margin-right: auto;
-}
-
-
-#menu input[type=text] {
-    height: 4vh;
-    font-size: 2.5vh;
-    width: 80%;
-    margin: 1vh 0 1vh 0;
-    padding-left: 1vw;
 }
 
 
@@ -172,7 +164,7 @@ h3 {
     background: transparent;
     fill: none;
     display: block;
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 
 input[type=submit].no-bg {
@@ -191,6 +183,7 @@ input[type=text].no-bg {
     width: 30vw;
     padding-left: 2vw;
     padding: 0;
+    margin-left: 1vw;
 }
 
 input[type=text].no-bg:focus {
@@ -211,6 +204,12 @@ input[type=submit].no-bg:hover {
     color: black;
 }
 
+#menu input[type=text] {
+    height: 4vh;
+    width: 80%;
+    padding-left: 1vw;
+    margin-left: 0;
+}
 
 #main {
     width: 100%;
@@ -251,7 +250,7 @@ input[type=submit].no-bg:hover {
     }
 
     #main-header {
-        margin: 3vh 4vw 3vh 4vw;
+        margin: 3vh 2vw 3vh 2vw;
     }
 
     .closed-menu {
@@ -263,8 +262,7 @@ input[type=submit].no-bg:hover {
     }
 
     #menu {
-        width: 20vw;
-        border-right: 1px solid #1d3124;
+        width: 30vw;
     }
  
     #mask {
@@ -292,26 +290,22 @@ input[type=submit].no-bg:hover {
         align-items: center;
         font-size: 1.6vh;
     }
-    
+
+    #add-list {
+        padding-right: 1vw;
+    }
+
     #menu input[type=text] {
-        margin-left: 1vw;
         padding-left: .2vw;
         font-size: 2.4vh;
         width: 70%;
+        margin-left: 1vw;
     }
 
     input[type=text].no-bg {
-        margin-left: 2vw;
         width: 20vw;
     }
 
-    input[type=text].no-bg:focus {
-        padding-top: 1px;
-    }
-
-    #menu input[type=submit] {
-        margin-right: 1vw;
-    }
 
     #add-item-outer {
         width: 30vw;
@@ -341,7 +335,7 @@ input[type=submit].no-bg:hover {
     }
 
     #title h1 {
-        font-size: 10vh;
+        font-size: 8vmin;
         display: flex;
         align-items: center;
     }
@@ -359,7 +353,7 @@ input[type=submit].no-bg:hover {
 
     #quote {
         display: block;
-        font-size: 3.5vmin;
+        font-size: 3vmin;
     }
     #author {
         display: block;
