@@ -7,7 +7,9 @@
     <meta name="description" content="Make lists and add items to do!">
     <meta name="keywords" content="todo, to-do, planning, plan">
     <meta http-equiv="X-Ua-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel='stylesheet' href='css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='css/uicons-solid-rounded.css'>
     <script src="menu.js"></script>
 </head>
 
@@ -24,13 +26,14 @@
                 Do all you have to do!
             </h2>
             <h3>
-                <div id="quote">We Become What We Think About</div><div id="author">- Earl Nightingale</div>
+                <div id="quote">We Become What We Think About</div>
+                <div id="author">- Earl Nightingale</div>
             </h3>
         </div>
         <div id="log-out">
             <a href="logout.php">
                 <div id="log-out-button">
-                    log out
+                    <i class="fi fi-rr-sign-out"></i>
                 </div>
             </a>
         </div>
@@ -45,13 +48,18 @@
                 <nav>
                     <div id="hiding-menu">
                         <a href="#" class="menu-option"><span class="list">list1</span><span class="item-count">3 items</span></a>
-                        <a href="#" class="menu-option"><span class="list">list2</span><span class="item-count">5 items</span></a>
-                        <a href="#" class="menu-option"><span class="list">list3</span><span class="item-count">7 items</span></a>
-                        <a href="#" class="menu-option"><span class="list">list4</span><span class="item-count">2 items</span></a>
+                        <a href="#" class="menu-option"><span class="list">laaaaaist2</span><span class="item-count">5 items</span></a>
+                        <a href="#" class="menu-option"><span class="list">aaaaaaaalist3</span><span class="item-count">7 items</span></a>
+                        <a href="#" class="menu-option"><span class="list">liaaast4</span><span class="item-count">2 items</span></a>
                         <form action="addList.php" method="POST">
-                        <div id="add-list">
+                            <div id="add-list">
                                 <input type="text" placeholder="New list name" class="no-bg">
-                                <input type="submit" value="+" class="no-bg">
+                                <button type="submit" class="no-bg">
+                                    <span class="icon-hover">
+                                        <i class="fi fi-sr-add filled"></i>
+                                        <i class="fi fi-rr-add normal"></i>
+                                    </span>
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -62,47 +70,28 @@
             <div id="add-item-outer">
                 <form action="addItem.php" method="POST">
                     <div id="add-item">
-                        <input type="submit" value="+" class="no-bg">
+                        <button type="submit" class="no-bg">
+                            <span class="icon-hover">
+                                <i class="fi fi-sr-add filled"></i>
+                                <i class="fi fi-rr-add normal"></i>
+                            </span>
+                        </button>
                         <input type="text" placeholder="Add task" class="no-bg">
                     </div>
                 </form>
             </div>
             <ul id="items">
-                <li>item1</li>
-                <li>item2</li>
-                <li>item3</li>
-                <li>item4</li>
-                <li>Wyneść śmieci</li>
-                <li>item6</li>
-                <li>item7</li>
-                <li>item8</li>
-                <li>item9</li>
-                <li>item10</li>
-                <li>item11</li>
-                <li>item12</li>
-                <li>item13</li>
-                <li>item14</li>
-                <li>item15</li>
-                <li>item16</li>
-                <li>item17</li>
-                <li>item18</li>
-                <li>item19</li>
-                <li>item20</li>
-                <li>item21</li>
-                <li>item22</li>
-                <li>item23</li>
-                <li>item24</li>
-                <li>item25</li>
-                <li>item26</li>
-                <li>item27</li>
-                <li>item28</li>
-                <li>item29</li>
-                <li>item30</li>
+                <li class="item"><span class="icon-hover"><i class="fi fi-rr-checkbox normal"></i><i class="fi fi-sr-checkbox filled"></i></span>iaaaatem1</li>
+                <li class="item"><span class="icon-hover"><i class="fi fi-rr-checkbox normal"></i><i class="fi fi-sr-checkbox filled"></i></span>itaahfghgfhaaaaem2</li>
+                <li class="item"><span class="icon-hover"><i class="fi fi-rr-checkbox normal"></i><i class="fi fi-sr-checkbox filled"></i></span>item3</li>
+                <li class="item"><span class="icon-hover"><i class="fi fi-rr-checkbox normal"></i><i class="fi fi-sr-checkbox filled"></i></span>iteam4</li>
+
+
             </ul>
         </main>
     </div>
     <footer id="footer">
-        <div id="footer_content">Tymoteusz Stępkowsi 2022 &#169; All rights reserved</div>
+        <div id="footer_content">Tymoteusz Stępkowsi 2022 &#169; All rights reserved. Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a></div>
         <div id="footer_contact">tymoteusz.stepkowski@gmail.com</div>
     </footer>
 </body>

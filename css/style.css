@@ -7,6 +7,12 @@ body {
     color: #1d3124;
 }
 
+i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 a {
     color: #1d3124;
     text-decoration: none;
@@ -18,7 +24,7 @@ a {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: center;
     padding: 0 1vh 0 1vh;
     margin: 1vh 0 1vh 0;
 }
@@ -49,19 +55,23 @@ a {
     border-top: .5vh solid #1d3124;
 }
 
-#log-out {
-    margin: 2vh 0 2vh 0;
+#log-out-button {
+    color: #1d3124;
+    border-radius: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vh;
+    width: 5vh;
+    height: 5vh;
+    padding: 1vh;
 }
 
-#log-out-button {
+#log-out-button:hover {
     background-color: #1d3124;
     color: #f6f4e8;
-    border-radius: .6vh;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    box-sizing: border-box;
 }
+
 
 #menu {
     width: 100vw;
@@ -143,11 +153,8 @@ h3 {
 #add-item {
     display: flex;
     flex-direction: row;
-    width: 60vw;
-    justify-content: center;
-    margin: 2vh;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: flex-start;
+    margin: 2vh 5vw;
 }
 
 
@@ -167,7 +174,7 @@ h3 {
     box-sizing: border-box;
 }
 
-input[type=submit].no-bg {
+button[type=submit].no-bg {
     text-align: center;
     font-size: 3.6vh;
     width: 4vh;
@@ -199,16 +206,26 @@ input[type=text].no-bg:focus::placeholder {
     content: "";
 }
 
-input[type=submit].no-bg:hover {
-    outline: solid black 1px;
-    color: black;
-}
-
 #menu input[type=text] {
     height: 4vh;
     width: 80%;
     padding-left: 1vw;
     margin-left: 0;
+}
+
+#add-item input[type=text] {
+    width: 60vw;
+}
+
+.icon-hover .filled {
+    display: none;
+}
+.icon-hover:hover .filled {
+    display: flex;
+}
+
+.icon-hover:hover .normal {
+    display: none;
 }
 
 #main {
@@ -219,22 +236,32 @@ input[type=submit].no-bg:hover {
 }
 
 #items {
-    padding: 0;
+    padding: 1vh 1vw;
     margin: 0;
     display: flex;
     font-size: 3vh;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 100%;
     box-sizing: border-box;
     display: block;
 }
 
-#items li {
+.item {
     list-style-type: none;
     padding: 1vh;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
+
+.item .icon-hover {
+    margin: 0 2vw;
+}
+
 
 #quote, #author {
     display: none;
