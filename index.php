@@ -7,6 +7,7 @@
     <meta name="description" content="Make lists and add items to do!">
     <meta name="keywords" content="todo, to-do, planning, plan">
     <meta http-equiv="X-Ua-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link rel="stylesheet" href="css/style.css">
     <link rel='stylesheet' href='css/uicons-regular-rounded.css'>
     <link rel='stylesheet' href='css/uicons-solid-rounded.css'>
@@ -47,10 +48,10 @@
             <div id="mask" class="closed-menu">
                 <nav>
                     <div id="hiding-menu">
-                        <a href="#" class="menu-option"><span class="list">list1</span><span class="item-count">3 items</span></a>
-                        <a href="#" class="menu-option"><span class="list">laaaaaist2</span><span class="item-count">5 items</span></a>
-                        <a href="#" class="menu-option"><span class="list">aaaaaaaalist3</span><span class="item-count">7 items</span></a>
-                        <a href="#" class="menu-option"><span class="list">liaaast4</span><span class="item-count">2 items</span></a>
+                        <a href="#" class="menu-option"><span class="list">list1</span><span class="item-count">3</span></a>
+                        <a href="#" class="menu-option"><span class="list">laaaaaist2</span><span class="item-count">5</span></a>
+                        <a href="#" class="menu-option"><span class="list">aaaaaaaalist3</span><span class="item-count">7</span></a>
+                        <a href="#" class="menu-option"><span class="list">liaaast4</span><span class="item-count">2</span></a>
                         <form action="addList.php" method="POST">
                             <div id="add-list">
                                 <input type="text" placeholder="New list name" class="no-bg">

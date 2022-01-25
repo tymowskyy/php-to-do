@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
 
+:root {
+    font-size: 20px;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 2vh;
     margin: 0;
     color: #1d3124;
 }
@@ -19,19 +22,20 @@ a {
 }
 
 #main-header {
-    height: 10vh;
+    height: 4rem;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1vh 0 1vh;
-    margin: 1vh 0 1vh 0;
+    padding: 0 .5rem 0 .5rem;
+    margin: .5rem 0 .5rem 0;
 }
 
 #logo img {
-    height: 8vh;
-    width: 8vh;
+    height: 3rem;
+    width: 3rem;
+    display: block;
 }
 
 #title {
@@ -41,30 +45,31 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
+    min-width: 8rem;
 }
 
 #title h1 {
     margin: 0;
-    font-size: 4vh;
-    letter-spacing: .4vh;
+    font-size: 2rem;
+    letter-spacing: .2rem;
 }
 
 #title h2 {
     margin: 0;
-    font-size: 1.6vh;
-    border-top: .5vh solid #1d3124;
+    font-size: .6rem;
+    border-top: .2rem solid #1d3124;
 }
 
 #log-out-button {
     color: #1d3124;
-    border-radius: 2vh;
+    border-radius: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4vh;
-    width: 5vh;
-    height: 5vh;
-    padding: 1vh;
+    font-size: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: .4rem;
 }
 
 #log-out-button:hover {
@@ -80,19 +85,19 @@ a {
 #mask {
     position: absolute;
     overflow: hidden;
-    transform: translatey(-.5vh);
     width: 100%;
+    transform: translateY(-.2rem);
 }
 
 #active-list {
     background-color: #bacec1;
     text-align: center;
-    padding: 1vh;
+    padding: .5rem 2vw;
     box-sizing: border-box;
 }
 
 h3 {
-    font-size: 4vh;
+    font-size: 2rem;
     margin: 0;
     padding: 0;
 }
@@ -103,7 +108,7 @@ h3 {
     width: 100%;
     transition: transform .4s ease-in-out;
     background-color: #bacec1;
-    padding: .5vh 20vw 2vh 20vw;
+    padding: .2rem 15vw 1rem 15vw;
     box-sizing: border-box;
 }
 
@@ -120,23 +125,22 @@ h3 {
 }
 
 .menu-option {
-    padding: 1vh 0 1vh 0;
+    padding: .4rem 0;
     display: flex;
     flex-direction: row;
-    font-size: 3vh;
     border-bottom: 1px #1d3124 solid;
 }
 
 .list {
     font-style: italic;
-    width: 50%;
+    width: 80%;
     box-sizing: border-box;
 }
 
 .item-count {
     box-sizing: border-box;
     text-align: right;
-    width: 50%;
+    width: 30%;
 }
 
 #add-list {
@@ -147,14 +151,13 @@ h3 {
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 1vh .5vh;
+    padding: .5rem .5rem;
 }
 
 #add-item {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    margin: 2vh 5vw;
 }
 
 
@@ -176,21 +179,20 @@ h3 {
 
 button[type=submit].no-bg {
     text-align: center;
-    font-size: 3.6vh;
-    width: 4vh;
-    height: 4vh;
+    font-size: 1.6rem;
+
     border-radius: 50%;
     padding: 0;
     color: gray;
 }
 
 input[type=text].no-bg {
-    height: 4vh;
-    font-size: 2.6vh;
+    height: 2rem;
+    font-size: 1.2rem;
     width: 30vw;
-    padding-left: 2vw;
+    padding-left: 0vw;
     padding: 0;
-    margin-left: 1vw;
+    margin-left: 2vw;
 }
 
 input[type=text].no-bg:focus {
@@ -207,9 +209,7 @@ input[type=text].no-bg:focus::placeholder {
 }
 
 #menu input[type=text] {
-    height: 4vh;
     width: 80%;
-    padding-left: 1vw;
     margin-left: 0;
 }
 
@@ -229,17 +229,19 @@ input[type=text].no-bg:focus::placeholder {
 }
 
 #main {
+    box-sizing: border-box;
     width: 100%;
     display: flex;
     flex-direction: column;
     background-color: #f6f4e8;
+    padding: 1rem 3vw;
 }
 
 #items {
-    padding: 1vh 1vw;
+    padding: 0;
     margin: 0;
     display: flex;
-    font-size: 3vh;
+    font-size: 1.4rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -250,7 +252,7 @@ input[type=text].no-bg:focus::placeholder {
 
 .item {
     list-style-type: none;
-    padding: 1vh;
+    padding-top: 1rem;
     text-align: center;
     display: flex;
     flex-direction: row;
@@ -259,7 +261,7 @@ input[type=text].no-bg:focus::placeholder {
 }
 
 .item .icon-hover {
-    margin: 0 2vw;
+    margin-right: 2vw;
 }
 
 
@@ -267,17 +269,28 @@ input[type=text].no-bg:focus::placeholder {
     display: none;
 }
 
+@media only screen and (max-width: 380px) {
+    :root {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    :root {
+        font-size: 26px;
+    }
+} 
+
+
 @media only screen and (min-width : 992px) {
 
     #main {
         box-sizing: border-box;
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        border-radius: 5vh;
+        border-radius: 1rem;
     }
 
     #main-header {
-        margin: 3vh 2vw 3vh 2vw;
+        margin: 1rem 2vw 1rem 2vw;
     }
 
     .closed-menu {
@@ -289,7 +302,7 @@ input[type=text].no-bg:focus::placeholder {
     }
 
     #menu {
-        width: 30vw;
+        width: 50vw;
     }
  
     #mask {
@@ -301,7 +314,7 @@ input[type=text].no-bg:focus::placeholder {
     }
     
     #hiding-menu {
-        padding: 1vh 0 1vh 0;
+        padding: .5rem 0;
         transition: none;
         background-color: inherit;
     }
@@ -315,7 +328,7 @@ input[type=text].no-bg:focus::placeholder {
         display: flex;
         justify-content: end;
         align-items: center;
-        font-size: 1.6vh;
+        font-size: .8rem;
     }
 
     #add-list {
@@ -323,8 +336,8 @@ input[type=text].no-bg:focus::placeholder {
     }
 
     #menu input[type=text] {
+        font-size: 1rem;
         padding-left: .2vw;
-        font-size: 2.4vh;
         width: 70%;
         margin-left: 1vw;
     }
@@ -336,8 +349,7 @@ input[type=text].no-bg:focus::placeholder {
 
     #add-item-outer {
         width: 30vw;
-        padding-right: 5vw;
-        padding-top: 2vh;
+        padding-top: .6rem;
     }
 
     #add-item {
@@ -352,17 +364,12 @@ input[type=text].no-bg:focus::placeholder {
         width: 100%;
     }
 
-    #items {
-        font-size: 4vh;
-        width: 100%;
-    } 
-
     #title {
         flex-direction: row;
     }
 
     #title h1 {
-        font-size: 8vmin;
+        font-size: 3rem;
         display: flex;
         align-items: center;
     }
@@ -380,11 +387,21 @@ input[type=text].no-bg:focus::placeholder {
 
     #quote {
         display: block;
-        font-size: 3vmin;
+        font-size: 1rem;
     }
     #author {
         display: block;
-        font-size: 2vmin;
+        font-size: .6rem;
+    }
+}
+
+@media only screen and (min-width : 1200px) {
+    #main {
+        flex-direction: row-reverse;
+        justify-content: space-between;
     }
 
+    #menu {
+        width: 35vw;
+    }
 }
