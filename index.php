@@ -112,8 +112,12 @@
         </main>
     </div>
     <footer id="footer">
-        <div id="footer_content">Tymoteusz Stępkowsi 2022 &#169; All rights reserved. Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a></div>
-        <div id="footer_contact">tymoteusz.stepkowski@gmail.com</div>
+        <div id="footer-content">
+            <div>Tymoteusz Stępkowski 2022 &#169; All rights reserved.</div>
+            <div>Uicons by <a href="https://www.flaticon.com/uicons" target="_blank">Flaticon</a></div>
+        </div>
+        <div id="footer-separator"></div>
+        <div id="footer-contact">tymoteusz.stepkowski@gmail.com</div>
     </footer>
 </body>
 

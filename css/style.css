@@ -15,8 +15,8 @@
 .dark {
     --color-font: #f5fafd;
     --color-form: #bbcbd4;
-    --color-menu: #444444;
-    --color-main: #1f1f1f;
+    --color-menu: #313131;
+    --color-main: #141414;
     --color-header: #926106;
 }
 
@@ -122,7 +122,7 @@ body.dark .dark-only, .light-only {
 }
 
 #menu {
-    width: 100vw;
+    width: 100%;
     position: sticky;
     top: 0;
 }
@@ -207,9 +207,10 @@ h3 {
 
 
 #container {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
 }
 
 
@@ -237,7 +238,7 @@ input[type=text].no-bg {
     width: 30vw;
     padding-left: 0vw;
     padding: 0;
-    margin-left: 2vw;
+    margin-left: 1.4rem;
 }
 
 button[type=submit].no-bg:focus {
@@ -295,7 +296,7 @@ input[type=text].no-bg:focus::placeholder {
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 1rem 3vw;
+    padding: 1rem 6vw 2rem 6vw;
 }
 
 #items {
@@ -322,12 +323,46 @@ input[type=text].no-bg:focus::placeholder {
 }
 
 .item .icon-hover {
-    margin-right: 2vw;
+    margin-right: 1.4rem;
 }
 
 
 #quote, #author {
     display: none;
+}
+
+#footer {
+    background-color: var(--color-header);
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2rem 2vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+#footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 100%;
+}
+
+#footer-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 100%;
+}
+
+#footer-separator {
+    height: 1rem;
+    width: 100%;
 }
 
 @media only screen and (max-width: 360px) {
@@ -357,7 +392,8 @@ input[type=text].no-bg:focus::placeholder {
 @media only screen and (min-width : 992px) {
 
     #main {
-        margin: 1rem 2vw;
+        padding: 1rem 3vw 2rem 3vw;
+        margin: 1.6rem 3vw;
         box-sizing: border-box;
         border-radius: 1rem;
     }
@@ -429,7 +465,6 @@ input[type=text].no-bg:focus::placeholder {
     #container {
         justify-content: center;
         flex-direction: row;
-        box-sizing: border-box;
         width: 100%;
     }
 
@@ -463,6 +498,10 @@ input[type=text].no-bg:focus::placeholder {
         display: block;
         font-size: .6rem;
     }
+
+    #footer { 
+        padding: 3rem 5vw;
+    }
 }
 
 @media only screen and (min-width : 1200px) {
@@ -477,5 +516,18 @@ input[type=text].no-bg:focus::placeholder {
 
     #add-item input[type=text].no-bg {
         width: 25vw;
+    }
+
+    #footer-content {
+        flex: 45%
+    }
+    
+    #footer-contact {
+        flex: 45%;
+    }
+
+    #footer-separator {
+        height: 100%;
+        flex: 10%;
     }
 }
