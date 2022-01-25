@@ -11,14 +11,22 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel='stylesheet' href='css/uicons-regular-rounded.css'>
     <link rel='stylesheet' href='css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='css/switch.css'>
     <script src="menu.js"></script>
 </head>
 
 <body>
     <header id="main-header">
-        <div id="logo">
-            <img src="logo.png" alt="logo">
+        <div id="mode-changer">
+            <i class="fi fi-rr-sun light-only"></i>
+            <i class="fi fi-rr-moon dark-only"></i>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round" onclick="dark()">
+                </span>
+            </label>
         </div>
+
         <div id="title">
             <h1>
                 TO-DO
@@ -31,6 +39,7 @@
                 <div id="author">- Earl Nightingale</div>
             </h3>
         </div>
+
         <div id="log-out">
             <a href="logout.php">
                 <div id="log-out-button">

@@ -28,6 +28,7 @@
 }
 
 body {
+    transition: background-color .3s ease-out;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     color: var(--color-main-1);
@@ -46,7 +47,7 @@ a {
 }
 
 #main-header {
-    height: 4rem;
+    height: 3rem;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -54,12 +55,6 @@ a {
     align-items: center;
     padding: 0 .5rem 0 .5rem;
     margin: .5rem 0 .5rem 0;
-}
-
-#logo img {
-    height: 3rem;
-    width: 3rem;
-    display: block;
 }
 
 #title {
@@ -76,6 +71,7 @@ a {
     margin: 0;
     font-size: 2rem;
     letter-spacing: .2rem;
+    min-width: 8rem;
 }
 
 #title h2 {
@@ -84,15 +80,21 @@ a {
     border-top: .2rem solid var(--color-main-1);
 }
 
+#log-out {
+    width: 6rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
 #log-out-button {
     color: var(--color-main-1);
     border-radius: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
-    width: 2.5rem;
-    height: 2.5rem;
+    font-size: 1.4rem;
+    width: 2rem;
+    height: 2rem;
     padding: .4rem;
 }
 
@@ -101,6 +103,25 @@ a {
     color: var(--color-secondary-1);
 }
 
+#mode-changer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.4rem;
+    width: 6rem;
+}
+
+#mode-changer i {
+    margin-right: 1rem;
+}
+
+body.dark .light-only, .dark-only {
+    display: none;
+}
+
+body.dark .dark-only, .light-only {
+    display: flex;
+}
 
 #menu {
     width: 100vw;
@@ -404,7 +425,7 @@ input[type=text].no-bg:focus::placeholder {
     }
 
     #title h1 {
-        font-size: 3rem;
+        font-size: 2rem;
         display: flex;
         align-items: center;
     }
@@ -414,7 +435,7 @@ input[type=text].no-bg:focus::placeholder {
     }
 
     #title h3 {
-        margin-left: 3vw;
+        margin-left: 1rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -424,6 +445,7 @@ input[type=text].no-bg:focus::placeholder {
         display: block;
         font-size: 1rem;
     }
+
     #author {
         display: block;
         font-size: .6rem;
