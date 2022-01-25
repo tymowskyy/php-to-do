@@ -4,35 +4,34 @@
     font-size: 18px;
 }
 
-/*:root {
-    --color-main-1: #1d3124;
-    --color-main-2: #0F662E;
-    --color-main-3: #bacec1;
-    --color-secondary-1: #f6f4e8;
-    --color-secondary-2: #F5EDC1;
-    --color-secondary-3: #C2BC99;
-}*/
-
 :root {
-    --color-main-1: #2f365f;
-    --color-main-2: #8C90A8;
-    --color-secondary-1: #f7f1ed;
-    --color-secondary-2: #febeb0;
+    --color-font: #023859;
+    --color-form: #207bb3;
+    --color-menu: #e0e0e0;
+    --color-main: #ffffff;
+    --color-header: #F29F05;
 }
 
 .dark {
-    --color-main-1: #f7f1ed;
-    --color-main-2: #E0CCC8;
-    --color-secondary-1: #21232B;
-    --color-secondary-2: #8C90A8;
+    --color-font: #f5fafd;
+    --color-form: #bbcbd4;
+    --color-menu: #444444;
+    --color-main: #1f1f1f;
+    --color-header: #926106;
 }
+
+
+#main-header {
+    background-color: var(--color-header);
+}
+
 
 body {
     transition: background-color .3s ease-out;
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    color: var(--color-main-1);
-    background-color: var(--color-secondary-1);
+    color: var(--color-font);
+    background-color: var(--color-menu);
 }
 
 i {
@@ -42,7 +41,7 @@ i {
 }
 
 a {
-    color: var(--color-main-1);
+    color: var(--color-font);
     text-decoration: none;
 }
 
@@ -53,8 +52,7 @@ a {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: 0 .5rem 0 .5rem;
-    margin: .5rem 0 .5rem 0;
+    padding: .5rem
 }
 
 #title {
@@ -77,7 +75,7 @@ a {
 #title h2 {
     margin: 0;
     font-size: .6rem;
-    border-top: .2rem solid var(--color-main-1);
+    border-top: .2rem solid var(--color-font);
 }
 
 #log-out {
@@ -87,7 +85,7 @@ a {
 }
 
 #log-out-button {
-    color: var(--color-main-1);
+    color: var(--color-font);
     border-radius: 1rem;
     display: flex;
     justify-content: center;
@@ -99,8 +97,8 @@ a {
 }
 
 #log-out-button:hover {
-    background-color: var(--color-main-1);
-    color: var(--color-secondary-1);
+    background-color: var(--color-font);
+    color: var(--color-header);
 }
 
 #mode-changer {
@@ -137,7 +135,7 @@ body.dark .dark-only, .light-only {
 }
 
 #active-list {
-    background-color: var(--color-secondary-2);
+    background-color: var(--color-menu);
     text-align: center;
     padding: .5rem 2vw;
     box-sizing: border-box;
@@ -154,7 +152,7 @@ h3 {
     flex-direction: column;
     width: 100%;
     transition: transform .4s ease-in-out;
-    background-color: var(--color-secondary-2);
+    background-color: var(--color-menu);
     padding: .2rem 15vw 1rem 15vw;
     box-sizing: border-box;
 }
@@ -168,14 +166,14 @@ h3 {
 }
 
 .menu-option:first-child {
-    border-top: 1px var(--color-main-1) solid;
+    border-top: 1px var(--color-font) solid;
 }
 
 .menu-option {
     padding: .4rem 0;
     display: flex;
     flex-direction: row;
-    border-bottom: 1px var(--color-main-1) solid;
+    border-bottom: 1px var(--color-font) solid;
 }
 
 .list {
@@ -230,7 +228,7 @@ button[type=submit].no-bg {
 
     border-radius: 50%;
     padding: 0;
-    color: var(--color-main-2)
+    color: var(--color-form)
 }
 
 input[type=text].no-bg {
@@ -257,14 +255,14 @@ button[type=submit].no-bg:focus .normal {
 input[type=text].no-bg:focus {
     outline: none;
     border: none;
-    border-bottom: var(--color-main-1) 1px solid;
+    border-bottom: var(--color-font) 1px solid;
     padding-top: 1px;
-    outline: var(--color-main-1);
-    color: var(--color-main-1);
+    outline: var(--color-font);
+    color: var(--color-font);
 }
 
 input[type=text].no-bg::placeholder {
-    color: var(--color-main-2);
+    color: var(--color-form);
 }
 
 input[type=text].no-bg:focus::placeholder {
@@ -292,6 +290,7 @@ input[type=text].no-bg:focus::placeholder {
 }
 
 #main {
+    background-color: var(--color-main);
     box-sizing: border-box;
     width: 100%;
     display: flex;
@@ -358,13 +357,13 @@ input[type=text].no-bg:focus::placeholder {
 @media only screen and (min-width : 992px) {
 
     #main {
-        background-color: var(--color-secondary-2);
+        margin: 1rem 2vw;
         box-sizing: border-box;
         border-radius: 1rem;
     }
 
     #main-header {
-        margin: 1rem 2vw 1rem 2vw;
+        padding: 1rem 2vw 1rem 2vw;
     }
 
     .closed-menu {
@@ -390,7 +389,7 @@ input[type=text].no-bg:focus::placeholder {
     
     #hiding-menu {
         padding: .5rem 0;
-        transition: none;
+        transition: inherit;
         background-color: transparent;
     }
     

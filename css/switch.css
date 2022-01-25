@@ -18,7 +18,7 @@
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: #febeb0;
+    background-color: var(--color-font);
     transition: background-color .3s ease-in-out;
 }
 
@@ -29,14 +29,9 @@
     height: .8em;
     left: .1em;
     top: .1em;
-    background-color: #f7f1ed;
+    background-color: var(--color-main);
     content: "";
     transition: transform .3s ease-in-out;
-}
-
-.switch input:checked + .slider
-{
-    background-color: #8C90A8;
 }
 
 .switch input:checked + .slider::before
