@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 /*:root {
@@ -22,7 +22,7 @@
 
 .dark {
     --color-main-1: #f7f1ed;
-    --color-main-2: #FFE4DE;
+    --color-main-2: #E0CCC8;
     --color-secondary-1: #21232B;
     --color-secondary-2: #8C90A8;
 }
@@ -112,7 +112,7 @@ a {
 }
 
 #mode-changer i {
-    margin-right: 1rem;
+    margin-right: .5rem;
 }
 
 body.dark .light-only, .dark-only {
@@ -125,6 +125,8 @@ body.dark .dark-only, .light-only {
 
 #menu {
     width: 100vw;
+    position: sticky;
+    top: 0;
 }
 
 #mask {
@@ -329,18 +331,29 @@ input[type=text].no-bg:focus::placeholder {
     display: none;
 }
 
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 360px) {
     :root {
-        font-size: 20px;
+        font-size: 16px;
     }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 360px) {
     :root {
-        font-size: 26px;
+        font-size: 18px;
     }
 } 
 
+@media only screen and (min-width: 600px) {
+    :root {
+        font-size: 20px;
+    }
+} 
+
+@media only screen and (min-width: 768px) {
+    :root {
+        font-size: 24px;
+    }
+} 
 
 @media only screen and (min-width : 992px) {
 
@@ -364,6 +377,7 @@ input[type=text].no-bg:focus::placeholder {
 
     #menu {
         width: 50vw;
+        position: relative;
     }
  
     #mask {
