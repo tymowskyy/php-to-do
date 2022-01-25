@@ -4,10 +4,34 @@
     font-size: 20px;
 }
 
+/*:root {
+    --color-main-1: #1d3124;
+    --color-main-2: #0F662E;
+    --color-main-3: #bacec1;
+    --color-secondary-1: #f6f4e8;
+    --color-secondary-2: #F5EDC1;
+    --color-secondary-3: #C2BC99;
+}*/
+
+:root {
+    --color-main-1: #2f365f;
+    --color-main-2: #8C90A8;
+    --color-secondary-1: #f7f1ed;
+    --color-secondary-2: #febeb0;
+}
+
+.dark {
+    --color-main-1: #f7f1ed;
+    --color-main-2: #FFE4DE;
+    --color-secondary-1: #21232B;
+    --color-secondary-2: #8C90A8;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    color: #1d3124;
+    color: var(--color-main-1);
+    background-color: var(--color-secondary-1);
 }
 
 i {
@@ -17,7 +41,7 @@ i {
 }
 
 a {
-    color: #1d3124;
+    color: var(--color-main-1);
     text-decoration: none;
 }
 
@@ -57,11 +81,11 @@ a {
 #title h2 {
     margin: 0;
     font-size: .6rem;
-    border-top: .2rem solid #1d3124;
+    border-top: .2rem solid var(--color-main-1);
 }
 
 #log-out-button {
-    color: #1d3124;
+    color: var(--color-main-1);
     border-radius: 1rem;
     display: flex;
     justify-content: center;
@@ -73,8 +97,8 @@ a {
 }
 
 #log-out-button:hover {
-    background-color: #1d3124;
-    color: #f6f4e8;
+    background-color: var(--color-main-1);
+    color: var(--color-secondary-1);
 }
 
 
@@ -90,7 +114,7 @@ a {
 }
 
 #active-list {
-    background-color: #bacec1;
+    background-color: var(--color-secondary-2);
     text-align: center;
     padding: .5rem 2vw;
     box-sizing: border-box;
@@ -107,7 +131,7 @@ h3 {
     flex-direction: column;
     width: 100%;
     transition: transform .4s ease-in-out;
-    background-color: #bacec1;
+    background-color: var(--color-secondary-2);
     padding: .2rem 15vw 1rem 15vw;
     box-sizing: border-box;
 }
@@ -121,14 +145,14 @@ h3 {
 }
 
 .menu-option:first-child {
-    border-top: 1px #1d3124 solid;
+    border-top: 1px var(--color-main-1) solid;
 }
 
 .menu-option {
     padding: .4rem 0;
     display: flex;
     flex-direction: row;
-    border-bottom: 1px #1d3124 solid;
+    border-bottom: 1px var(--color-main-1) solid;
 }
 
 .list {
@@ -183,7 +207,7 @@ button[type=submit].no-bg {
 
     border-radius: 50%;
     padding: 0;
-    color: gray;
+    color: var(--color-main-2)
 }
 
 input[type=text].no-bg {
@@ -195,13 +219,29 @@ input[type=text].no-bg {
     margin-left: 2vw;
 }
 
+button[type=submit].no-bg:focus {
+    outline: none;
+}
+
+button[type=submit].no-bg:focus .filled {
+    display: flex;
+}
+
+button[type=submit].no-bg:focus .normal {
+    display: none;
+}
+
 input[type=text].no-bg:focus {
     outline: none;
     border: none;
-    border-bottom: black 1px solid;
+    border-bottom: var(--color-main-1) 1px solid;
     padding-top: 1px;
-    outline: black;
-    color: black;
+    outline: var(--color-main-1);
+    color: var(--color-main-1);
+}
+
+input[type=text].no-bg::placeholder {
+    color: var(--color-main-2);
 }
 
 input[type=text].no-bg:focus::placeholder {
@@ -233,7 +273,6 @@ input[type=text].no-bg:focus::placeholder {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #f6f4e8;
     padding: 1rem 3vw;
 }
 
@@ -285,6 +324,7 @@ input[type=text].no-bg:focus::placeholder {
 @media only screen and (min-width : 992px) {
 
     #main {
+        background-color: var(--color-secondary-2);
         box-sizing: border-box;
         border-radius: 1rem;
     }
@@ -310,13 +350,13 @@ input[type=text].no-bg:focus::placeholder {
     }
     
     #active-list {
-        background-color: inherit;
+        background-color: transparent;
     }
     
     #hiding-menu {
         padding: .5rem 0;
         transition: none;
-        background-color: inherit;
+        background-color: transparent;
     }
     
     .list {
@@ -341,11 +381,6 @@ input[type=text].no-bg:focus::placeholder {
         width: 70%;
         margin-left: 1vw;
     }
-
-    input[type=text].no-bg {
-        width: 20vw;
-    }
-
 
     #add-item-outer {
         width: 30vw;
@@ -403,5 +438,9 @@ input[type=text].no-bg:focus::placeholder {
 
     #menu {
         width: 35vw;
+    }
+
+    #add-item input[type=text].no-bg {
+        width: 25vw;
     }
 }
