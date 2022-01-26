@@ -14,40 +14,11 @@
     <link rel='stylesheet' href='css/switch.css'>
     <script src="menu.js"></script>
 </head>
-
 <body>
-    <header id="main-header">
-        <div id="mode-changer">
-            <i class="fi fi-rr-sun light-only"></i>
-            <i class="fi fi-rr-moon dark-only"></i>
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider round" onclick="dark()">
-                </span>
-            </label>
-        </div>
 
-        <div id="title">
-            <h1>
-                TO-DO
-            </h1>
-            <h2>
-                Do all you have to do!
-            </h2>
-            <h3>
-                <div id="quote">We Become What We Think About</div>
-                <div id="author">- Earl Nightingale</div>
-            </h3>
-        </div>
-
-        <div id="log-out">
-            <a href="logout.php">
-                <div id="log-out-button">
-                    <i class="fi fi-rr-sign-out"></i>
-                </div>
-            </a>
-        </div>
-    </header>
+    <?php
+    require_once "templates/header.html";
+    ?>
 
     <div id="container">
         <div id="menu">
@@ -111,14 +82,10 @@
             </ul>
         </main>
     </div>
-    <footer id="footer">
-        <div id="footer-content">
-            <div>Tymoteusz Stępkowski 2022 &#169; All rights reserved.</div>
-            <div>Uicons by <a href="https://www.flaticon.com/uicons" target="_blank">Flaticon</a></div>
-        </div>
-        <div id="footer-separator"></div>
-        <div id="footer-contact">tymoteusz.stepkowski@gmail.com</div>
-    </footer>
-</body>
 
+    <?php
+    require_once "templates/footer.html";
+    ?>
+
+</body>
 </html>

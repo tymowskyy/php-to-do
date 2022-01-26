@@ -1,0 +1,71 @@
+#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+a {
+    color: var(--color-header);
+}
+
+a:hover {
+    color: var(--color-form)
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+#log-out-button {
+    display: none;
+}
+
+.form {
+    background-color: transparent;
+    border: none;
+    background: transparent;
+    fill: none;
+    display: block;
+    color: var(--color-font);
+    margin: .5rem;
+}
+
+input[type=email].form, input[type=password].form, input[type=text].form {
+    height: 2rem;
+    font-size: 1.2rem;
+    width: 60vw;
+    padding-left: 0vw;
+    padding: 0;
+    margin-left: 1.4rem;
+    border-bottom: .2rem solid var(--color-form);
+}
+
+input[type=email].form:focus, input[type=password].form:focus, input[type=text].form:focus {
+    outline: none;
+    border-bottom: .2rem solid var(--color-font);
+}
+
+input[type=email].form::placeholder, input[type=password].form::placeholder, input[type=text].form::placeholder {
+    color: var(--color-form);
+}
+
+input[type=submit].form {
+    color: var(--color-main);
+    background-color: var(--color-form);
+    border-radius: 2rem;
+    width: 7rem;
+    height: 3rem;
+    font-size: 1.4rem;
+}
+
+input[type=submit].form:hover, input[type=submit].form:focus {
+    background-color: var(--color-header);
+}
+
+@media only screen and (min-width : 992px) {
+    input[type=email].form, input[type=password].form, input[type=text].form {
+        width: 40vw;
+    }
+}

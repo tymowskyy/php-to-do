@@ -46,7 +46,7 @@ a {
 }
 
 #main-header {
-    height: 3rem;
+    height: 4rem;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -210,7 +210,9 @@ h3 {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     width: 100%;
+    min-height: calc(100vh - 4rem);
 }
 
 
@@ -291,6 +293,7 @@ input[type=text].no-bg:focus::placeholder {
 }
 
 #main {
+    flex: 100%;
     background-color: var(--color-main);
     box-sizing: border-box;
     width: 100%;
@@ -342,6 +345,7 @@ input[type=text].no-bg:focus::placeholder {
     align-items: stretch;
     text-align: center;
     flex-wrap: wrap;
+    margin-bottom: -200px;
 }
 
 #footer-content {
@@ -463,6 +467,7 @@ input[type=text].no-bg:focus::placeholder {
     }
 
     #container {
+        min-height: calc(100vh - 6rem);
         justify-content: center;
         flex-direction: row;
         width: 100%;
