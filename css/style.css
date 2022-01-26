@@ -20,11 +20,13 @@
     --color-header: #926106;
 }
 
+.error {
+    color: red;
+}
 
 #main-header {
     background-color: var(--color-header);
 }
-
 
 body {
     transition: background-color .3s ease-out;

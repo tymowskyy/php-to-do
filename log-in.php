@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>To-Do login</title>
+    <title>To-Do log in</title>
     <meta name="description" content="Make lists and add items to do!">
     <meta name="keywords" content="todo, to-do, planning, plan">
     <meta http-equiv="X-Ua-Compatible" content="IE=edge">
@@ -28,7 +28,7 @@
                 <input type="email" name="email" class="form" placeholder="e-mail">
                 <input type="password" name="password" class="form" placeholder="password">
                 <input type="submit" class="form" value="Log in">
-                <p>Don't have an account yet? <a href="sign-up.php">Sign up</a></p>
+                <p>Don't have an account yet? <a href="sign-up.php" class="form">Sign up</a></p>
             </main>
         </div>
     </form>

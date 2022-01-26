@@ -5,11 +5,11 @@
     align-items: center;
 }
 
-a {
+a.form {
     color: var(--color-header);
 }
 
-a:hover {
+a.form:hover {
     color: var(--color-form)
 }
 
@@ -22,14 +22,15 @@ h1 {
     display: none;
 }
 
-.form {
+input.form {
     background-color: transparent;
     border: none;
     background: transparent;
     fill: none;
     display: block;
     color: var(--color-font);
-    margin: .5rem;
+    margin: 1rem;
+    margin-bottom: 0;
 }
 
 input[type=email].form, input[type=password].form, input[type=text].form {
