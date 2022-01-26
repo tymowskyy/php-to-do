@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['logged_id'])) {
+    header('Location: log-in.php');
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

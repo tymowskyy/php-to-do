@@ -1,3 +1,35 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION['logged_id'])) {
+    header('Location: index.php');
+    exit();
+}
+
+if (isset($_POST['email'])) {
+    $email = $_POST['email'];
+    $pass = $_POST['password'];
+
+    require_once 'db/connect.php';
+
+    $query = $db->prepare('SELECT user_id, password FROM users WHERE email = :email');
+    $query->bindValue(':email', $email, PDO::PARAM_STR);
+    $query->execute();
+
+    $user = $query->fetch();
+    if ($user && password_verify($pass, $user['password'])) {
+        $_SESSION['logged_id'] = $user['user_id'];
+        header('Location: index.php');
+        exit();
+    }
+    else {
+        $_SESSION['g_email'] = $email;
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,11 +53,17 @@
     require_once "templates/header.html";
     ?>
 
-    <form action="login.php">
+    <form action="log-in.php" method="POST">
         <div id="container">
             <main id="main">
                 <h1>Log in</h1>
-                <input type="email" name="email" class="form" placeholder="e-mail">
+                <?= isset($_SESSION['g_email']) ? '<p class="error">Incorrect e-mail or password!</p>' : ''?>
+                <input type="email" name="email" class="form" placeholder="e-mail" <?php
+                if (isset($_SESSION['g_email'])) {
+                    echo 'value="'.$_SESSION['g_email'].'"';
+                    unset($_SESSION['g_email']);
+                }
+                ?>>
                 <input type="password" name="password" class="form" placeholder="password">
                 <input type="submit" class="form" value="Log in">
                 <p>Don't have an account yet? <a href="sign-up.php" class="form">Sign up</a></p>

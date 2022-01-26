@@ -2,6 +2,11 @@
 
 session_start();
 
+if (isset($_SESSION['logged_id'])) {
+    header('Location: index.php');
+    exit();
+}
+
 if (isset($_POST['email'])) {
     $ok = true;
 
@@ -9,7 +14,7 @@ if (isset($_POST['email'])) {
 
     if (empty($email)) {
         $ok = false;
-        $_SESSION['e_email'] == 'Please enter a valid e-mail!';
+        $_SESSION['e_email'] = 'Please enter a valid e-mail!';
     }
 
     $pass1 = $_POST['password1'];
