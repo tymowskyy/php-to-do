@@ -46,6 +46,9 @@ if (isset($_POST['email'])) {
         header('Location: welcome.php');
         exit();
     }
+    else {
+        $_SESSION['g_email'] = $email;
+    }
 }
 ?>
 
@@ -76,7 +79,12 @@ if (isset($_POST['email'])) {
         <div id="container">
             <main id="main">
                 <h1>Sign up</h1>
-                <input type="email" name="email" class="form" placeholder="e-mail">
+                <input type="email" name="email" class="form" placeholder="e-mail" <?php
+                if (isset($_SESSION['g_email'])) {
+                    echo 'value="'.$_SESSION['g_email'].'"';
+                    unset($_SESSION['g_email']);
+                }
+                ?>>
                 <?php
                 if(isset($_SESSION['e_email'])) {
                     echo '<p class="error">'.$_SESSION['e_email'].'</p>';
@@ -92,7 +100,7 @@ if (isset($_POST['email'])) {
                 ?>
                 <input type="password" name="password2" class="form" placeholder="repeat password">
                 <input type="submit" class="form" value="Sign up">
-                <p>Already have an account? <a href="sign-up.php" class="form">Log in</a></p>
+                <p>Already have an account? <a href="log-in.php" class="form">Log in</a></p>
             </main>
         </div>
     </form>
