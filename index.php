@@ -6,6 +6,9 @@ if (!isset($_SESSION['logged_id'])) {
     exit();
 }
 
+require_once 'db/connect.php';
+
+$lists = $db->query("SELECT name, COUNT(tasks.task_id) as taskCount FROM lists LEFT OUTER JOIN tasks ON tasks.list_id = lists.list_id WHERE lists.user_id = {$_SESSION['logged_id']} GROUP BY name;")->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -38,10 +41,13 @@ if (!isset($_SESSION['logged_id'])) {
             <div id="mask" class="closed-menu">
                 <nav>
                     <div id="hiding-menu">
-                        <a href="#" class="menu-option"><span class="list">list1</span><span class="item-count">3</span></a>
-                        <a href="#" class="menu-option"><span class="list">laaaaaist2</span><span class="item-count">5</span></a>
-                        <a href="#" class="menu-option"><span class="list">aaaaaaaalist3</span><span class="item-count">7</span></a>
-                        <a href="#" class="menu-option"><span class="list">liaaast4</span><span class="item-count">2</span></a>
+                        <?php
+                        foreach ($lists as $list) {
+                            echo '<a href="#" class="menu-option"><span class="list">'.$list['name'].'</span><span class="item-count">'.$list['taskCount'].'</span></a>';
+
+                        }
+                        ?>
+
                         <form action="addList.php" method="POST">
                             <div id="add-list">
                                 <input type="text" placeholder="New list name" class="no-bg">
