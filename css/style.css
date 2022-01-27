@@ -29,7 +29,7 @@
 }
 
 body {
-    transition: background-color .3s ease-out;
+    /* transition: background-color .3s ease-out; */
     font-family: 'Roboto', sans-serif;
     margin: 0;
     color: var(--color-font);

@@ -48,16 +48,15 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
     <meta name="keywords" content="todo, to-do, planning, plan">
     <meta http-equiv="X-Ua-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/toggle.js" defer></script>
+    <script src="js/deleteTask.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel='stylesheet' href='css/uicons-regular-rounded.css'>
     <link rel='stylesheet' href='css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='css/switch.css'>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="js/toggle.js"></script>
-    <script src="js/deleteTask.js" defer></script>
 </head>
 <body>
-
     <?php
     require_once "templates/header.html";
     ?>
@@ -132,7 +131,13 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
             </ul>
         </main>
     </div>
-
+    <script>
+    if(document.cookie.split(';')[0] == '1') {
+        var el = document.getElementsByTagName('body')[0];
+        el.classList.add('dark');
+        document.getElementById('mode-checkbox').checked = true;
+    }
+    </script>
     <?php
     require_once "templates/footer.html";
     ?>
