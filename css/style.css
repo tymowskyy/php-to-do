@@ -312,24 +312,28 @@ input[type=text].no-bg:focus::placeholder {
 #items {
     padding: 0;
     margin: 0;
-    display: flex;
     font-size: 1.4rem;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     width: 100%;
     box-sizing: border-box;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    overflow: hidden;
 }
 
 .item {
     list-style-type: none;
     padding-top: 1rem;
-    text-align: center;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
+}
+
+.task {
+    width: 80vw;
+    overflow-wrap: break-word;
+    overflow: hidden;
 }
 
 .item .icon-hover {
@@ -401,6 +405,10 @@ input[type=text].no-bg:focus::placeholder {
 } 
 
 @media only screen and (min-width : 992px) {
+
+    .task {
+        width: 40vw;
+    }
 
     h3 {
         font-size: 1.4rem;
@@ -523,6 +531,10 @@ input[type=text].no-bg:focus::placeholder {
 }
 
 @media only screen and (min-width : 1300px) {
+    .task {
+        width: 20vw;
+    }
+
     #main {
         flex-direction: row-reverse;
         justify-content: space-between;

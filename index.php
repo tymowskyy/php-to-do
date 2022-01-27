@@ -97,7 +97,7 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
         </div>
         <main id="main">
             <div id="add-item-outer">
-                <form action="addItem.php" method="POST">
+                <form action="addTask.php" method="POST">
                     <div id="add-item">
                         <button type="submit" class="no-bg">
                             <span class="icon-hover">
@@ -105,15 +105,21 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
                                 <i class="fi fi-rr-add normal"></i>
                             </span>
                         </button>
-                        <input type="text" placeholder="Add task" class="no-bg">
+                        <input type="text" placeholder="Add task" class="no-bg" name="task">
                     </div>
                 </form>
+                <?php
+                if (isset($_SESSION['e_task'])) {
+                    echo '<p class="error">'.$_SESSION['e_task'].'</p>';
+                    unset($_SESSION['e_task']);
+                }
+                ?>
             </div>
             <ul id="items">
                 <?php
                 foreach ($tasks as $task) {
-                    echo '<li class="item"><span class="icon-hover"><i class="fi fi-rr-checkbox normal"></i><i class="fi fi-sr-checkbox filled"></i></span>'.
-                    $task['content'].'</li>';
+                    echo '<li class="item"><span class="icon-hover"><i class="fi fi-rr-checkbox normal"></i><i class="fi fi-sr-checkbox filled"></i></span><span class="task">'.
+                    $task['content'].'</span></li>';
                 }
                 ?>
 
