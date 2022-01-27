@@ -397,6 +397,10 @@ input[type=text].no-bg:focus::placeholder {
 
 @media only screen and (min-width : 992px) {
 
+    h3 {
+        font-size: 1.4rem;
+    }
+
     #main {
         padding: 1rem 3vw 2rem 3vw;
         margin: 1.6rem 3vw;
@@ -417,6 +421,7 @@ input[type=text].no-bg:focus::placeholder {
     }
 
     #menu {
+        padding-top: 1rem;
         width: 50vw;
         position: relative;
     }
@@ -511,14 +516,14 @@ input[type=text].no-bg:focus::placeholder {
     }
 }
 
-@media only screen and (min-width : 1200px) {
+@media only screen and (min-width : 1300px) {
     #main {
         flex-direction: row-reverse;
         justify-content: space-between;
     }
 
     #menu {
-        width: 35vw;
+        width: 37vw;
     }
 
     #add-item input[type=text].no-bg {

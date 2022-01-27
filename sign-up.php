@@ -31,24 +31,56 @@ if (isset($_POST['email'])) {
 
     require_once 'db/connect.php';
 
-    $emailQuerry = $db->prepare('SELECT * from users WHERE email = :email');
+
+    $emailQuerryContent = 'SELECT * from users WHERE email = :email';
+    $emailQuerry = $db->prepare($emailQuerryContent);
     $emailQuerry->bindValue(':email', $email, PDO::PARAM_STR);
     $emailQuerry->execute();
 
     if($emailQuerry->rowCount()) {
         $ok = false;
-        $_SESSION['e_email'] = "Account with given e-mail already exist";
+        $_SESSION['e_email'] = 'Account with given e-mail already exist';
     }
 
     if ($ok) {
         $password_hash = password_hash($pass1, PASSWORD_DEFAULT);
 
-        $query = $db->prepare('INSERT INTO users VALUES (NULL, :email, :password)');
-        $query->bindValue(':email', $email, PDO::PARAM_STR);
-        $query->bindValue(':password', $password_hash, PDO::PARAM_STR);
-        $query->execute();
+        $addUserQueryContent = 'INSERT INTO users VALUES (NULL, :email, :password)';
+        $addUserQuery = $db->prepare($addUserQueryContent);
+        $addUserQuery->bindValue(':email', $email, PDO::PARAM_STR);
+        $addUserQuery->bindValue(':password', $password_hash, PDO::PARAM_STR);
+        $addUserQuery->execute();
+        
+        $getUserIdQueryContent = 'SELECT user_id FROM users WHERE email = :email';
+        $getUserIdQuery = $db->prepare($getUserIdQueryContent);
+        $getUserIdQuery->bindValue(':email', $email, PDO::PARAM_STR);
+        $getUserIdQuery->execute();
+        $user_id = $getUserIdQuery->fetch()['user_id'];
+        
+        $_SESSION['logged_id'] = $user_id;
+        $addWelcomeQueryContent = 'INSERT INTO lists VALUES (NULL, :user_id, "Welcome")';
+        $addWelcomeQuery = $db->prepare($addWelcomeQueryContent);
+        $addWelcomeQuery->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+        $addWelcomeQuery->execute();
+        
+        $getWelcomeQueryContent = 'SELECT list_id FROM lists WHERE user_id = :user_id';
+        $getWelcomeQuery = $db->prepare($getWelcomeQueryContent);
+        $getWelcomeQuery->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+        $getWelcomeQuery->execute();
+        $list_id = $getWelcomeQuery->fetch()['list_id'];
 
-        header('Location: welcome.php');
+        $welcome = require_once 'welcome.php';
+        $addTaskQueryContent = 'INSERT INTO tasks VALUES';
+
+        $values = "";
+        foreach ($welcome as $task) {
+            $values = $values.'(NULL, '.$list_id.', "'.$task.'"),';
+        }
+        $values = substr($values, 0, -1);
+
+        $db->query($addTaskQueryContent.$values);
+
+        header('Location: index.php');
         exit();
     }
     else {

@@ -12,12 +12,12 @@ if (isset($_POST['email'])) {
     $pass = $_POST['password'];
 
     require_once 'db/connect.php';
+    $LoginQueryContent = 'SELECT user_id, password FROM users WHERE email = :email';
+    $LoginQuery = $db->prepare($LoginQueryContent);
+    $LoginQuery->bindValue(':email', $email, PDO::PARAM_STR);
+    $LoginQuery->execute();
 
-    $query = $db->prepare('SELECT user_id, password FROM users WHERE email = :email');
-    $query->bindValue(':email', $email, PDO::PARAM_STR);
-    $query->execute();
-
-    $user = $query->fetch();
+    $user = $LoginQuery->fetch();
     if ($user && password_verify($pass, $user['password'])) {
         $_SESSION['logged_id'] = $user['user_id'];
         header('Location: index.php');
