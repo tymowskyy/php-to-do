@@ -48,14 +48,15 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
     <meta name="keywords" content="todo, to-do, planning, plan">
     <meta http-equiv="X-Ua-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/toggle.js" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/deleteTask.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel='stylesheet' href='css/uicons-regular-rounded.css'>
     <link rel='stylesheet' href='css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='css/switch.css'>
 </head>
+
 <body>
     <?php
     require_once "templates/header.html";
@@ -75,7 +76,7 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
                             if ($list['list_id'] == $_SESSION['current_list']) {
                                 $itemCountId = 'id="itemCountCurrent"';
                             }
-                            echo '<a href="?list_id='.$list['list_id'].'" class="menu-option"><span class="list">'.$list['name'].'</span><span class="item-count" '.$itemCountId.'>'.$list['taskCount'].'</span></a>';
+                            echo '<a href="?list_id=' . $list['list_id'] . '" class="menu-option"><span class="list">' . $list['name'] . '</span><span class="item-count" ' . $itemCountId . '>' . $list['taskCount'] . '</span></a>';
                         }
                         ?>
 
@@ -92,7 +93,7 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
                         </form>
                         <?php
                         if (isset($_SESSION['e_list'])) {
-                            echo '<p class="error">'.$_SESSION['e_list'].'</p>';
+                            echo '<p class="error">' . $_SESSION['e_list'] . '</p>';
                             unset($_SESSION['e_list']);
                         }
                         ?>
@@ -115,7 +116,7 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
                 </form>
                 <?php
                 if (isset($_SESSION['e_task'])) {
-                    echo '<p class="error">'.$_SESSION['e_task'].'</p>';
+                    echo '<p class="error">' . $_SESSION['e_task'] . '</p>';
                     unset($_SESSION['e_task']);
                 }
                 ?>
@@ -123,24 +124,19 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
             <ul id="items">
                 <?php
                 foreach ($tasks as $task) {
-                    echo '<li class="item" id="task'.$task['task_id'].'"><span class="icon-hover" onclick="deleteTask('.$task['task_id'].');"><i class="fi fi-rr-checkbox normal"></i><i class="fi fi-sr-checkbox filled"></i></span><span class="task">'.
-                    $task['content'].'</span></li>';
+                    echo '<li class="item" id="task' . $task['task_id'] . '"><span class="icon-hover" onclick="deleteTask(' . $task['task_id'] . ');"><i class="fi fi-rr-checkbox normal"></i><i class="fi fi-sr-checkbox filled"></i></span><span class="task">' .
+                        $task['content'] . '</span></li>';
                 }
                 ?>
 
             </ul>
         </main>
     </div>
-    <script>
-    if(document.cookie.split(';')[0] == '1') {
-        var el = document.getElementsByTagName('body')[0];
-        el.classList.add('dark');
-        document.getElementById('mode-checkbox').checked = true;
-    }
-    </script>
+    <script src="js/setTheme.js"></script>
     <?php
     require_once "templates/footer.html";
     ?>
 
 </body>
+
 </html>

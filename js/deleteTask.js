@@ -10,9 +10,6 @@ const deleteTask = async (task) => {
             var itemCount = document.getElementById('itemCountCurrent');
             itemCount.innerHTML = parseInt(itemCount.innerHTML) - 1;
         }
-        else {
-            console.log(resp);
-        }
 
     } catch (err) {
         console.error(err);

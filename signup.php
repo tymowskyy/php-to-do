@@ -141,7 +141,7 @@ if (isset($_POST['email'])) {
             </main>
         </div>
     </form>
-        
+    <script src="js/setTheme.js"></script>
     <?php
     require_once "templates/footer.html";
     ?>
