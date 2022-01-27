@@ -112,7 +112,7 @@ if (isset($_POST['email'])) {
     require_once "templates/header.html";
     ?>
 
-    <form action="sign-up.php" method="POST">
+    <form action="signup.php" method="POST">
         <div id="container">
             <main id="main">
                 <h1>Sign up</h1>
@@ -137,7 +137,7 @@ if (isset($_POST['email'])) {
                 ?>
                 <input type="password" name="password2" class="form" placeholder="repeat password">
                 <input type="submit" class="form" value="Sign up">
-                <p>Already have an account? <a href="log-in.php" class="form">Log in</a></p>
+                <p>Already have an account? <a href="login.php" class="form">Log in</a></p>
             </main>
         </div>
     </form>

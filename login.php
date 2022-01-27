@@ -53,7 +53,7 @@ if (isset($_POST['email'])) {
     require_once "templates/header.html";
     ?>
 
-    <form action="log-in.php" method="POST">
+    <form action="login.php" method="POST">
         <div id="container">
             <main id="main">
                 <h1>Log in</h1>
@@ -66,7 +66,7 @@ if (isset($_POST['email'])) {
                 ?>>
                 <input type="password" name="password" class="form" placeholder="password">
                 <input type="submit" class="form" value="Log in">
-                <p>Don't have an account yet? <a href="sign-up.php" class="form">Sign up</a></p>
+                <p>Don't have an account yet? <a href="signup.php" class="form">Sign up</a></p>
             </main>
         </div>
     </form>
