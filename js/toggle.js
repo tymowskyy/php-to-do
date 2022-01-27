@@ -6,5 +6,4 @@ function menu() {
 function dark() {
     var el = document.getElementsByTagName('body')[0];
     el.classList.toggle('dark');
-    console.log('a')
 }

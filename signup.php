@@ -104,7 +104,7 @@ if (isset($_POST['email'])) {
     <link rel='stylesheet' href='css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='css/switch.css'>
     <link rel='stylesheet' href='css/form.css'>
-    <script src="menu.js"></script>
+    <script src="js/toggle.js"></script>
 </head>
 <body style="min-height: 100vh;">
 

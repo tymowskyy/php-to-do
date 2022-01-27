@@ -52,7 +52,9 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
     <link rel='stylesheet' href='css/uicons-regular-rounded.css'>
     <link rel='stylesheet' href='css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='css/switch.css'>
-    <script src="menu.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/toggle.js"></script>
+    <script src="js/deleteTask.js" defer></script>
 </head>
 <body>
 
@@ -70,7 +72,11 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
                     <div id="hiding-menu">
                         <?php
                         foreach ($lists as $list) {
-                            echo '<a href="?list_id='.$list['list_id'].'" class="menu-option"><span class="list">'.$list['name'].'</span><span class="item-count">'.$list['taskCount'].'</span></a>';
+                            $itemCountId = "";
+                            if ($list['list_id'] == $_SESSION['current_list']) {
+                                $itemCountId = 'id="itemCountCurrent"';
+                            }
+                            echo '<a href="?list_id='.$list['list_id'].'" class="menu-option"><span class="list">'.$list['name'].'</span><span class="item-count" '.$itemCountId.'>'.$list['taskCount'].'</span></a>';
                         }
                         ?>
 
@@ -118,7 +124,7 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
             <ul id="items">
                 <?php
                 foreach ($tasks as $task) {
-                    echo '<li class="item"><span class="icon-hover"><i class="fi fi-rr-checkbox normal"></i><i class="fi fi-sr-checkbox filled"></i></span><span class="task">'.
+                    echo '<li class="item" id="task'.$task['task_id'].'"><span class="icon-hover" onclick="deleteTask('.$task['task_id'].');"><i class="fi fi-rr-checkbox normal"></i><i class="fi fi-sr-checkbox filled"></i></span><span class="task">'.
                     $task['content'].'</span></li>';
                 }
                 ?>
