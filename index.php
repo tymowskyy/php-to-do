@@ -76,7 +76,7 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
 
                         <form action="addList.php" method="POST">
                             <div id="add-list">
-                                <input type="text" placeholder="New list name" class="no-bg">
+                                <input type="text" placeholder="New list name" class="no-bg" name="list_name">
                                 <button type="submit" class="no-bg">
                                     <span class="icon-hover">
                                         <i class="fi fi-sr-add filled"></i>
@@ -85,6 +85,12 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
                                 </button>
                             </div>
                         </form>
+                        <?php
+                        if (isset($_SESSION['e_list'])) {
+                            echo '<p class="error">'.$_SESSION['e_list'].'</p>';
+                            unset($_SESSION['e_list']);
+                        }
+                        ?>
                     </div>
                 </nav>
             </div>

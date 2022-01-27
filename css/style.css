@@ -129,6 +129,10 @@ body.dark .dark-only, .light-only {
     top: 0;
 }
 
+#menu .error {
+    margin-left: 2rem;
+}
+
 #mask {
     position: absolute;
     overflow: hidden;
