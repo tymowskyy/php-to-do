@@ -11,8 +11,8 @@ if (!isset($_POST['list_name'])) {
     exit();
 }
 
-if ((strlen($_POST['list_name']) < 1) || (strlen($_POST['list_name']) > 14)) {
-    $_SESSION['e_list'] = 'List name must be 1 to 14 characters long!';
+if ((strlen($_POST['list_name']) < 1) || (strlen($_POST['list_name']) > 50)) {
+    $_SESSION['e_list'] = 'List name must be 1 to 50 characters long!';
 }
 else {
     require_once 'db/connect.php';

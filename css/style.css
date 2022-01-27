@@ -176,6 +176,7 @@ h3 {
 }
 
 .menu-option {
+    width: 100%;
     padding: .4rem 0;
     display: flex;
     flex-direction: row;
@@ -185,7 +186,7 @@ h3 {
 .list {
     font-style: italic;
     width: 80%;
-    box-sizing: border-box;
+    overflow-wrap: break-word;
 }
 
 .item-count {
@@ -406,6 +407,7 @@ input[type=text].no-bg:focus::placeholder {
     }
 
     #main {
+        flex: 0%;
         padding: 1rem 3vw 2rem 3vw;
         margin: 1.6rem 3vw;
         box-sizing: border-box;
@@ -426,7 +428,7 @@ input[type=text].no-bg:focus::placeholder {
 
     #menu {
         padding-top: 1rem;
-        width: 50vw;
+        width: 40vw;
         position: relative;
     }
  
@@ -527,7 +529,7 @@ input[type=text].no-bg:focus::placeholder {
     }
 
     #menu {
-        width: 37vw;
+        width: 30vw;
     }
 
     #add-item input[type=text].no-bg {
