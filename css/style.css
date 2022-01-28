@@ -145,6 +145,7 @@ body.dark .dark-only, .light-only {
     text-align: center;
     padding: .5rem 2vw;
     box-sizing: border-box;
+
 }
 
 h3 {
@@ -445,6 +446,7 @@ input[type=text].no-bg:focus::placeholder {
     }
     
     #active-list {
+        overflow-wrap: break-word;
         background-color: transparent;
     }
     
@@ -509,6 +511,7 @@ input[type=text].no-bg:focus::placeholder {
     }
 
     #title h3 {
+        overflow-wrap: break-word;
         margin-left: 1rem;
         display: flex;
         flex-direction: column;

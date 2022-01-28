@@ -61,7 +61,7 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
     <?php
     require_once "templates/header.html";
     ?>
-
+    <script src="js/setTheme.js"></script>
     <div id="container">
         <div id="menu">
             <header id="active-list">
@@ -132,7 +132,6 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
             </ul>
         </main>
     </div>
-    <script src="js/setTheme.js"></script>
     <?php
     require_once "templates/footer.html";
     ?>
