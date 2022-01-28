@@ -60,10 +60,7 @@ a {
 #title {
     height: 100%;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
+    display: block;
     min-width: 8rem;
 }
 
@@ -143,13 +140,14 @@ body.dark .dark-only, .light-only {
 #active-list {
     background-color: var(--color-menu);
     text-align: center;
-    padding: .5rem 2vw;
+    padding: .5rem 15vw;
     box-sizing: border-box;
     position: sticky;
     top: 0;
+    cursor: pointer;
 }
 
-h3 {
+#active-list h3 {
     font-size: 2rem;
     margin: 0;
     padding: 0;
@@ -165,7 +163,7 @@ h3 {
     width: 100%;
     transition: transform .4s ease-in-out;
     background-color: var(--color-menu);
-    padding: .2rem 15vw 1rem 15vw;
+    padding: .2rem 15vw 3rem 15vw;
     box-sizing: border-box;
 }
 
@@ -252,6 +250,7 @@ input[type=text].no-bg {
     padding-left: 0vw;
     padding: 0;
     margin-left: 1.4rem;
+    color: var(--color-font);
 }
 
 button[type=submit].no-bg:focus {
@@ -272,7 +271,6 @@ input[type=text].no-bg:focus {
     border-bottom: var(--color-font) 1px solid;
     padding-top: 1px;
     outline: var(--color-font);
-    color: var(--color-font);
 }
 
 input[type=text].no-bg::placeholder {
@@ -290,6 +288,9 @@ input[type=text].no-bg:focus::placeholder {
 
 #add-item input[type=text] {
     width: 60vw;
+}
+.icon-hover {
+    cursor: pointer;
 }
 
 .icon-hover .filled {
@@ -384,6 +385,10 @@ input[type=text].no-bg:focus::placeholder {
     width: 100%;
 }
 
+i {
+    user-select: none;
+}
+
 @media only screen and (max-width: 360px) {
     :root {
         font-size: 16px;
@@ -410,11 +415,14 @@ input[type=text].no-bg:focus::placeholder {
 
 @media only screen and (min-width : 992px) {
 
+
+
     .task {
         width: 40vw;
     }
 
-    h3 {
+    #active-list h3 {
+        cursor: text;
         font-size: 1.4rem;
     }
 
@@ -430,10 +438,6 @@ input[type=text].no-bg:focus::placeholder {
         padding: 1rem 2vw 1rem 2vw;
     }
 
-    .closed-menu {
-        pointer-events: all;
-    }
-
     .closed-menu #hiding-menu {
         transform: none;
     }
@@ -445,10 +449,16 @@ input[type=text].no-bg:focus::placeholder {
     }
  
     #mask {
+        display: block;
         position: relative;
     }
-    
+
+    #mask.closed-menu {
+        pointer-events: all;
+    }
+
     #active-list {
+        padding: .5rem 2vw;
         position: relative;
         overflow-wrap: break-word;
         background-color: transparent;
@@ -501,7 +511,10 @@ input[type=text].no-bg:focus::placeholder {
     }
 
     #title {
+        display: flex;
         flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
     }
 
     #title h1 {

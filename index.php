@@ -66,7 +66,7 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
     <div id="container">
         <div id="menu">
             <header id="active-list">
-                <h3 onclick="menu()"><?= $_SESSION['current_list_name'] ?><h3>
+                <h3 onclick="menu()"><?= $_SESSION['current_list_name'] ?></h3>
             </header>
             <div id="mask" class="closed-menu">
                 <nav>

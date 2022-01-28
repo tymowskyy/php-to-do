@@ -26,15 +26,14 @@ function big(x) {
 }
 
 function setUp() {
-    var x1 = window.matchMedia("(min-width: 360px)");
-    x1.addEventListener("change", recalculateHeight);
-    var x2 = window.matchMedia("(min-width: 600px)");
-    x2.addEventListener("change", recalculateHeight);
-    var x3 = window.matchMedia("(min-width: 768px)");
-    x3.addEventListener("change", recalculateHeight);
+    window.matchMedia("(min-width: 360px)").addEventListener("change", recalculateHeight);
+    window.matchMedia("(min-width: 600px)").addEventListener("change", recalculateHeight);
+    window.matchMedia("(min-width: 768px)").addEventListener("change", recalculateHeight);
     var xbig = window.matchMedia("(min-width: 992px)");
     big(xbig);
     xbig.addEventListener("change", big);
     document.querySelector('#mask').style.display = 'block';
 
 }
+
+setUp();
