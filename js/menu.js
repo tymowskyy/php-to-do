@@ -6,7 +6,6 @@ function menu() {
 }
 
 function recalculateHeight(x=null) {
-    console.log(x, bigScreen);
     var growDiv = document.querySelector('#mask');
     if (bigScreen) {
         growDiv.style.height = 'auto';
@@ -33,7 +32,4 @@ function setUp() {
     big(xbig);
     xbig.addEventListener("change", big);
     document.querySelector('#mask').style.display = 'block';
-
 }
-
-setUp();

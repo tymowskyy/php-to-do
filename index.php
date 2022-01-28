@@ -50,16 +50,16 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
     <meta http-equiv="X-Ua-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <script src="js/toggle.js" defer></script>
-    <script src="js/menu.js"></script>
+    <script src="js/menu.js"defer></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="js/deleteTask.js"></script>
+    <script src="js/delete.js" defer></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel='stylesheet' href='css/uicons-regular-rounded.css'>
     <link rel='stylesheet' href='css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='css/switch.css'>
 </head>
 
-<body onload="setUp()">
+<body onload="setUp();">
     <?php
     require_once "templates/header.html";
     ?>
@@ -76,10 +76,10 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
                         $listsContent = "";
                         foreach ($lists as $list) {
                             if ($list['list_id'] == $_SESSION['current_list']) {
-                                $listsContent = '<a href="?list_id=' . $list['list_id'] . '" class="menu-option"><span class="list">' . $list['name'] . '</span><span class="item-count" id="itemCountCurrent">' . $list['taskCount'] . '</span></a>'.$listsContent;
+                                $listsContent = '<div class="menu-option-outer" id="list'.$list['list_id'].'"><a href="?list_id=' . $list['list_id'] . '" class="menu-option"><span class="list">' . $list['name'] . '</span><span class="item-count" id="itemCountCurrent">' . $list['taskCount'] . '</span></a><span class="icon-hover" onclick="deleteList('.$list['list_id'].')"><i class="fi fi-sr-trash filled"></i><i class="fi fi-rr-trash normal"></i></span></div>'.$listsContent;
                             }
                             else {
-                                $listsContent = $listsContent.'<a href="?list_id=' . $list['list_id'] . '" class="menu-option"><span class="list">' . $list['name'] . '</span><span class="item-count">' . $list['taskCount'] . '</span></a>';
+                                $listsContent = $listsContent.'<div class="menu-option-outer" id="list'.$list['list_id'].'"><a href="?list_id=' . $list['list_id'] . '" class="menu-option"><span class="list">' . $list['name'] . '</span><span class="item-count">' . $list['taskCount'] . '</span></a><span class="icon-hover" onclick="deleteList('.$list['list_id'].')"><i class="fi fi-sr-trash filled"></i><i class="fi fi-rr-trash normal"></i></span></div>';
                             }
                         }
                         echo $listsContent;
