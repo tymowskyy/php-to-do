@@ -26,6 +26,11 @@ else {
         $taskQuery->bindValue(':list_id', $_SESSION['current_list'], PDO::PARAM_INT);
         $taskQuery->bindValue('content', $_POST['task'], PDO::PARAM_STR);
         $taskQuery->execute();
+        
+        $updateTimeQueryContent = 'UPDATE lists SET last_edit = current_timestamp() WHERE list_id = :list_id';
+        $updateTimeQuery = $db->prepare($updateTimeQueryContent);
+        $updateTimeQuery->bindValue(':list_id', $_SESSION['current_list'], PDO::PARAM_INT);
+        $updateTimeQuery->execute();
     }
 }
 

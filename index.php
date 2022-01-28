@@ -25,7 +25,7 @@ if (isset($_GET['list_id'])) {
     exit();
 }
 
-$listsQueryContent = "SELECT lists.name, lists.list_id, COUNT(tasks.task_id) as taskCount FROM lists LEFT OUTER JOIN tasks ON tasks.list_id = lists.list_id WHERE lists.user_id = {$_SESSION['logged_id']} GROUP BY name";
+$listsQueryContent = "SELECT lists.name, lists.list_id, lists.last_edit, COUNT(tasks.task_id) as taskCount FROM lists LEFT OUTER JOIN tasks ON tasks.list_id = lists.list_id WHERE lists.user_id = {$_SESSION['logged_id']} GROUP BY lists.list_id ORDER BY lists.last_edit DESC";
 $lists = $db->query($listsQueryContent)->fetchAll();
 
 if (!isset($_SESSION['current_list'])) {
@@ -72,13 +72,16 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
                 <nav>
                     <div id="hiding-menu">
                         <?php
+                        $listsContent = "";
                         foreach ($lists as $list) {
-                            $itemCountId = "";
                             if ($list['list_id'] == $_SESSION['current_list']) {
-                                $itemCountId = 'id="itemCountCurrent"';
+                                $listsContent = '<a href="?list_id=' . $list['list_id'] . '" class="menu-option"><span class="list">' . $list['name'] . '</span><span class="item-count" id="itemCountCurrent">' . $list['taskCount'] . '</span></a>'.$listsContent;
                             }
-                            echo '<a href="?list_id=' . $list['list_id'] . '" class="menu-option"><span class="list">' . $list['name'] . '</span><span class="item-count" ' . $itemCountId . '>' . $list['taskCount'] . '</span></a>';
+                            else {
+                                $listsContent = $listsContent.'<a href="?list_id=' . $list['list_id'] . '" class="menu-option"><span class="list">' . $list['name'] . '</span><span class="item-count">' . $list['taskCount'] . '</span></a>';
+                            }
                         }
+                        echo $listsContent;
                         ?>
 
                         <form action="addList.php" method="POST">

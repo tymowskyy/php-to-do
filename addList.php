@@ -21,7 +21,7 @@ else {
     else {
         require_once 'db/connect.php';
         
-        $addListQueryContent = 'INSERT INTO lists VALUES (NULL, :user_id, :name)';
+        $addListQueryContent = 'INSERT INTO lists VALUES (NULL, :user_id, :name, current_timestamp())';
         $addListQuery = $db->prepare($addListQueryContent);
         $addListQuery->bindValue(':user_id', $_SESSION['logged_id']);
         $addListQuery->bindValue(':name', $_POST['list_name']);
