@@ -125,8 +125,6 @@ body.dark .dark-only, .light-only {
 
 #menu {
     width: 100%;
-    position: sticky;
-    top: 0;
 }
 
 #menu .error {
@@ -138,6 +136,8 @@ body.dark .dark-only, .light-only {
     overflow: hidden;
     width: 100%;
     transform: translateY(-.2rem);
+    transition: height 1s ease-in-out;
+    display: none;
 }
 
 #active-list {
@@ -145,13 +145,18 @@ body.dark .dark-only, .light-only {
     text-align: center;
     padding: .5rem 2vw;
     box-sizing: border-box;
-
+    position: sticky;
+    top: 0;
 }
 
 h3 {
     font-size: 2rem;
     margin: 0;
     padding: 0;
+    overflow-wrap: break-word;
+    display: inline-block;
+    word-break: break-word;
+    width: 100%;
 }
 
 #hiding-menu {
@@ -164,11 +169,7 @@ h3 {
     box-sizing: border-box;
 }
 
-.closed-menu #hiding-menu{
-    transform: translateY(-100%);
-}
-
-.closed-menu {
+#mask.closed-menu {
     pointer-events: none;
 }
 
@@ -188,6 +189,8 @@ h3 {
     font-style: italic;
     width: 80%;
     overflow-wrap: break-word;
+    display: inline-block;
+    word-break: break-word;
 }
 
 .item-count {
@@ -446,6 +449,7 @@ input[type=text].no-bg:focus::placeholder {
     }
     
     #active-list {
+        position: relative;
         overflow-wrap: break-word;
         background-color: transparent;
     }

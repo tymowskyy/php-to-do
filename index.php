@@ -49,6 +49,7 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
     <meta http-equiv="X-Ua-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <script src="js/toggle.js" defer></script>
+    <script src="js/menu.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/deleteTask.js"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -57,7 +58,7 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
     <link rel='stylesheet' href='css/switch.css'>
 </head>
 
-<body>
+<body onload="setUp()">
     <?php
     require_once "templates/header.html";
     ?>
