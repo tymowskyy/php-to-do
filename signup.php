@@ -2,6 +2,8 @@
 
 session_start();
 
+require_once 'captcha.php';
+
 if (isset($_SESSION['logged_id'])) {
     header('Location: index.php');
     exit();
@@ -9,6 +11,14 @@ if (isset($_SESSION['logged_id'])) {
 
 if (isset($_POST['email'])) {
     $ok = true;
+
+    $captcha = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secretKey.'&response='.$_POST['g-recaptcha-response']);
+    $captchaDecoded = json_decode($captcha);
+
+    if (!$captchaDecoded->success) {
+        $ok = false;
+        $_SESSION['e_captcha'] = "Please proof that you are not bot!";
+    }
 
     $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 
@@ -58,7 +68,7 @@ if (isset($_POST['email'])) {
         $user_id = $getUserIdQuery->fetch()['user_id'];
         
         $_SESSION['logged_id'] = $user_id;
-        $addWelcomeQueryContent = 'INSERT INTO lists VALUES (NULL, :user_id, "Welcome")';
+        $addWelcomeQueryContent = 'INSERT INTO lists VALUES (NULL, :user_id, "Welcome", current_timestamp())';
         $addWelcomeQuery = $db->prepare($addWelcomeQueryContent);
         $addWelcomeQuery->bindValue(':user_id', $user_id, PDO::PARAM_INT);
         $addWelcomeQuery->execute();
@@ -105,6 +115,7 @@ if (isset($_POST['email'])) {
     <link rel='stylesheet' href='css/switch.css'>
     <link rel='stylesheet' href='css/form.css'>
     <script src="js/toggle.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 <body style="min-height: 100vh;">
 
@@ -136,6 +147,15 @@ if (isset($_POST['email'])) {
                 }
                 ?>
                 <input type="password" name="password2" class="form" placeholder="repeat password">
+
+                <div class="g-recaptcha" data-sitekey="<?=$publicKey?>"></div>
+                <?php
+                if (isset($_SESSION['e_captcha'])) {
+                    echo '<p class="error">'.$_SESSION['e_captcha'].'</p>';
+                    unset($_SESSION['e_captcha']);
+                }
+                ?>
+
                 <input type="submit" class="form" value="Sign up">
                 <p>Already have an account? <a href="login.php" class="form">Log in</a></p>
             </main>

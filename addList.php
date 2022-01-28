@@ -26,6 +26,7 @@ else {
         $addListQuery->bindValue(':user_id', $_SESSION['logged_id']);
         $addListQuery->bindValue(':name', $_POST['list_name']);
         $addListQuery->execute();
+        unset($_SESSION['current_list']);
     }
 }
 

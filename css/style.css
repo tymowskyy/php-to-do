@@ -389,6 +389,10 @@ i {
     user-select: none;
 }
 
+.g-recaptcha {
+    padding-top: 1rem;
+}
+
 @media only screen and (max-width: 360px) {
     :root {
         font-size: 16px;
