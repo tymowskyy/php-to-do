@@ -66,8 +66,8 @@ $tasks = $db->query($tasksQueryContent)->fetchAll();
     <script src="js/setTheme.js"></script>
     <div id="container">
         <div id="menu">
-            <header id="active-list">
-                <h3 onclick="menu()"><?= $_SESSION['current_list_name'] ?></h3>
+            <header id="active-list" onclick="menu()">
+                <h3><?= $_SESSION['current_list_name'] ?></h3><i class="fi fi-rr-list"></i>
             </header>
             <div id="mask" class="closed-menu">
                 <nav>

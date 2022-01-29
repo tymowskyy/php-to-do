@@ -124,16 +124,12 @@ body.dark .dark-only, .light-only {
     width: 100%;
 }
 
-#menu .error {
-    margin-left: 2rem;
-}
-
 #mask {
     position: absolute;
     overflow: hidden;
     width: 100%;
     transform: translateY(-.2rem);
-    transition: height 1s ease-in-out;
+    transition: height .5s ease-in-out;
     display: none;
 }
 
@@ -145,6 +141,10 @@ body.dark .dark-only, .light-only {
     position: sticky;
     top: 0;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 #active-list h3 {
@@ -154,7 +154,11 @@ body.dark .dark-only, .light-only {
     overflow-wrap: break-word;
     display: inline-block;
     word-break: break-word;
-    width: 100%;
+}
+
+#active-list i {
+    padding-left: 1rem;
+    font-size: 2rem;
 }
 
 #hiding-menu {
@@ -216,7 +220,7 @@ body.dark .dark-only, .light-only {
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: .5rem .5rem;
+    padding-top: .5rem;
 }
 
 #add-item {
@@ -430,6 +434,14 @@ i {
 
 @media only screen and (min-width : 992px) {
 
+    #menu .error {
+        margin-left: 1rem;
+    }
+
+    #active-list i {
+        display: none;
+    }
+
     .task {
         width: 40vw;
     }
@@ -493,6 +505,7 @@ i {
 
     #add-list {
         padding-right: 1vw;
+        padding-left: .5rem;
     }
 
     #menu input[type=text] {
