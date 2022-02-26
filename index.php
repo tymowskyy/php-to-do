@@ -3,7 +3,7 @@
 session_start();
 
 if (!isset($_SESSION['logged_id'])) {
-    header('Location: login.php');
+    header('Location: login');
     exit();
 }
 
@@ -22,7 +22,7 @@ if (isset($_GET['list_id'])) {
         $_SESSION['current_list'] = $newList;
         $_SESSION['current_list_name'] = $listQuery->fetch()['name'];
     }
-    header('Location: index.php');
+    header('Location: todo');
     exit();
 }
 

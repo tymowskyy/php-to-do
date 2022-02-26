@@ -1,0 +1,9 @@
+RewriteEngine on
+Options -Indexes
+RedirectMatch 404 /\.git
+RedirectMatch 404 /db/init.sql
+RedirectMatch 404 README.md
+
+RewriteRule login login.php
+RewriteRule signup signup.php
+RewriteRule todo index.php

@@ -6,4 +6,4 @@ if(isset($_SESSION['logged_id'])) {
     unset($_SESSION['logged_id']);
 }
 
-header('Location: login.php');
+header('Location: login');

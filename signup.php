@@ -5,7 +5,7 @@ session_start();
 require_once 'captcha.php';
 
 if (isset($_SESSION['logged_id'])) {
-    header('Location: index.php');
+    header('Location: todo');
     exit();
 }
 
@@ -90,7 +90,7 @@ if (isset($_POST['email'])) {
 
         $db->query($addTaskQueryContent.$values);
 
-        header('Location: index.php');
+        header('Location: todo');
         exit();
     }
     else {
@@ -123,7 +123,7 @@ if (isset($_POST['email'])) {
     require_once "templates/header.html";
     ?>
 
-    <form action="signup.php" method="POST">
+    <form action="signup" method="POST">
         <div id="container">
             <main id="main">
                 <h1>Sign up</h1>
@@ -157,7 +157,7 @@ if (isset($_POST['email'])) {
                 ?>
 
                 <input type="submit" class="form" value="Sign up">
-                <p>Already have an account? <a href="login.php" class="form">Log in</a></p>
+                <p>Already have an account? <a href="todo" class="form">Log in</a></p>
             </main>
         </div>
     </form>

@@ -2,12 +2,12 @@
 
 session_start();
 if (!isset($_SESSION['logged_id'])) {
-    header('Location: login.php');
+    header('Location: login');
     exit();
 }
 
 if (!isset($_POST['list_name'])) {
-    header('Location: index.php');
+    header('Location: todo');
     exit();
 }
 
@@ -30,4 +30,4 @@ else {
     }
 }
 
-header('Location: index.php');
+header('Location: todo');

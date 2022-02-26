@@ -30,7 +30,7 @@ const deleteList = async (list_id) => {
         const resp = await axios.post('deleteList.php', listData);
         if (resp.data == '1') {
             if (document.querySelectorAll('#list' + list_id + ' #itemCountCurrent').length)
-                window.open('index.php');
+                window.open('todo');
             document.querySelector('#list' + list_id).remove();
             checkListCount();
         }

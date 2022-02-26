@@ -2,12 +2,12 @@
 
 session_start();
 if (!isset($_SESSION['logged_id'])) {
-    header('Location: login.php');
+    header('Location: todo');
     exit();
 }
 
 if (!isset($_POST['task']) || !isset($_SESSION['current_list'])) {
-    header('Location: index.php');
+    header('Location: todo');
     exit();
 }
 
@@ -34,4 +34,4 @@ else {
     }
 }
 
-header('Location: index.php');
+header('Location: todo');
